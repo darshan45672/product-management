@@ -13,7 +13,10 @@ app.use(bodyParser.json());
 
 const connectDB = require('../connection/connection');
 connectDB();
-const product = require('../schema/productSchema');
+
+const productRoute = require('../api/product');
+
+app.use('/', productRoute);
 
 const port = process.env.PORT || 3001;
 
